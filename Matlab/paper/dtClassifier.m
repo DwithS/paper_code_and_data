@@ -9,7 +9,6 @@ for i = 1:sim_num
     ts_data = data(~sim_seq(:,i),:);
     ts_ans = answer(~sim_seq(:,i),:);
     
-    %mdl = fitcnb(tr_data, tr_ans, 'DistributionName', 'mvmn');
     mdl = fitctree(tr_data,tr_ans);
     pre = mdl.predict(ts_data);
     
